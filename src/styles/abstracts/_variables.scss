@@ -1,0 +1,32 @@
+// Colors
+$primary: #347b7b;
+$secondary: #ffffff;
+$tertiary: #214a79;
+$transparent: rgba(0, 0, 0, 0);
+$text: $tertiary;
+$bg-light: #115173;
+$bg: $secondary;
+$bg-dark: $secondary;
+$error: #dd1b40;
+$white: #fff;
+$black: #000;
+$border: #053f5e;
+$gray: #8e8e8e;
+$grey: #8e8e8e;
+
+// fonts
+$Oswald: "Oswald", sans-serif;
+$Noto: "Noto Sans", sans-serif;
+$Poppins: "Poppins", sans-serif;
+$Montserrat: "Montserrat", sans-serif;
+
+// breakpoints
+$sm: 375;
+$md: 768;
+$lg: 1230;
+
+//z-index
+$overlay: 100;
+$modal: 99;
+$toast: 98;
+$navbar: 97;

@@ -1,0 +1,39 @@
+@mixin media($class) {
+  @if $class == sm {
+    @media (min-width: r($sm)) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: r($md)) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: r($lg)) {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint mixin supports: sm, md, lg';
+  }
+}
+
+@mixin headline($font-size, $line-height) {
+  font-size: r($font-size);
+  line-height: r($line-height);
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-fill($z-index: null) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include size(100%, 100%);
+  @if is-integer($z-index) {
+    z-index: $z-index;
+  }
+}

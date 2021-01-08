@@ -1,0 +1,87 @@
+
+.icon {
+    font-size: inherit;
+    display: none;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+    width: 1em;
+}
+
+@media screen {
+      .icon{
+            display: inline-block;
+      }
+}
+
+
+.w6 {
+      width: 0.375em;
+      height: 0.375em;
+}
+
+.w9 {
+      width: 0.5625em;
+      height: 0.5625em;
+}
+
+.w10 {
+      width: 0.625em;
+      height: 0.625em;
+}
+
+.w12 {
+      width: 0.75em;
+      height: 0.75em;
+
+}
+
+.w14 {
+      width: 0.875em;
+      height: 0.875em;
+
+}
+
+.w16 {
+      width: 1em;
+      height: 1em;
+
+}
+
+.w18 {
+      width: 1.125em;
+      height: 1.125em;
+
+}
+
+.w20 {
+      width: 1.25em;
+      height: 1.25em;
+
+}
+
+.w22{
+      width:1.375em;
+      height:1.375em;
+}
+.w24{
+      width:1.5em;
+      height:1.5em;
+}
+.w26{
+      width:1.625em;
+      height:1.625em;
+}
+.w28{
+      width:1.75em;
+      height:1.75em;
+}
+.w30{
+      width:1.875em;
+      height:1.875em;
+}
+
+.w32 {
+    width: 2em;
+    height: 2em;
+}

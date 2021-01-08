@@ -1,0 +1,148 @@
+.footer {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: r(40);
+
+  @include media(md) {
+    padding-top: r(50);
+  }
+
+  svg {
+  }
+}
+
+.logoWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: r(20);
+  width: r(60);
+  @include media(md) {
+    bottom: r(50);
+    width: r(150);
+  }
+  @include media(lg) {
+    width: r(200);
+  }
+}
+
+.goUp {
+  position: absolute;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: r(3);
+  background-color: $bg-light;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: r(6);
+  top: r(50);
+  right: r(50);
+  height: r(25);
+  width: r(25);
+  @include media(md) {
+    padding: r(16);
+    top: r(150);
+    right: r(150);
+    height: r(50);
+    width: r(50);
+  }
+
+  &:hover {
+    background-color: $bg;
+  }
+}
+
+.bannerWrapper,
+.bannerWrapper::before {
+  color: white;
+  height: r(125);
+  @include media(md) {
+    height: r(170);
+  }
+  @include media(lg) {
+    height: r(445);
+  }
+  background-attachment: fixed;
+}
+
+.titleContainer {
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  h3 {
+    margin-bottom: r(25);
+    font-size: r(12);
+    font-weight: 600;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  svg {
+    margin-right: r(30);
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @include media(md) {
+    padding: r(20) 0;
+    h3 {
+      font-size: r(32);
+    }
+  }
+}
+
+.footerSection {
+  padding-top: 0;
+  padding-bottom: r(22);
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: r(110);
+  justify-content: center;
+  @include media(md) {
+    justify-content: space-between;
+    max-height: r(110);
+  }
+}
+
+.footerInfo {
+  align-self: flex-end;
+  text-align: center;
+}
+
+.socialLinks {
+  width: r(102);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legalInfo {
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
+.address,
+.legalInfo,
+.socialLinks {
+  margin-top: r(10);
+  @include media(md) {
+    margin: 0;
+  }
+}

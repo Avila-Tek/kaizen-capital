@@ -1,0 +1,56 @@
+.sectionTitle {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: r(5);
+  @include headline(12, 17);
+  @include media(md) {
+    @include headline(20, 27);
+  }
+  @include media(lg) {
+    @include headline(28, 38);
+  }
+}
+
+.slogan {
+  text-transform: uppercase;
+  font-family: $Montserrat;
+  font-display: swap;
+  @include headline(16, 18);
+  @include media(md) {
+    @include headline(28, 30);
+  }
+  @include media(lg) {
+    @include headline(36, 38);
+  }
+}
+
+.teal {
+  font-weight: 300;
+}
+
+.margin {
+  margin-bottom: r(10);
+}
+
+.line {
+  background-color: $primary;
+  height: r(2);
+  width: 50%;
+  -webkit-transform: translateX(0);
+  -webkit-transition: transform 0.3s;
+  transform: translateX(0);
+  transition: transform 0.3s;
+  margin-bottom: r(2);
+}
+
+.titleContainer:hover .line {
+  -webkit-transform: translateX(100%);
+  -webkit-transition: transform 0.3s;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+}
+
+.titleContainer {
+  width: fit-content;
+  display: inline-block;
+}

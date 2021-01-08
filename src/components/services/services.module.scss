@@ -1,0 +1,120 @@
+.mainWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  @include media(md) {
+    margin-top: r(32);
+    display: grid;
+    grid-template-columns: repeat(2, r(360));
+    grid-template-rows: r(200) r(200);
+    grid-gap: r(6);
+  }
+  @include media(lg) {
+    grid-template-columns: repeat(2, r(625));
+    grid-template-rows: repeat(2, r(420));
+    grid-gap: r(8);
+  }
+}
+
+.cardWrapper {
+  overflow: hidden;
+  margin-top: r(10);
+  border-radius: r(4);
+  height: r(210);
+  width: 100%;
+  position: relative;
+  background: linear-gradient(180deg, transparent, $tertiary);
+  @include media(md) {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .title {
+    text-transform: uppercase;
+    position: absolute;
+    left: r(40);
+    bottom: r(20);
+    z-index: 2;
+    font-weight: bold;
+    overflow: hidden;
+    color: white;
+
+    @include headline(14, 19);
+    @include media(md) {
+      @include headline(18, 24);
+    }
+    @include media(lg) {
+      @include headline(24, 33);
+    }
+  }
+
+  .details {
+    opacity: 0;
+    text-transform: none;
+    font-weight: normal;
+    transition: opacity 0.6s, height 0.6s;
+    padding-right: r(40);
+    text-align: center;
+    @include headline(14, 19);
+    @include media(md) {
+      @include headline(16, 22);
+    }
+    @include media(lg) {
+      @include headline(20, 27);
+    }
+  }
+
+  .img {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+}
+
+.overlay {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background: linear-gradient(180deg, transparent, $tertiary);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s 0.3s;
+}
+
+.cardWrapper:hover > .overlay {
+  opacity: 0.75;
+  transition: opacity 0.6s;
+}
+
+.cardWrapper:hover .details {
+  opacity: 1;
+  transition: opacity 0.7s 0.2s, height 0.5s 0.1s;
+}
+
+.first {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.second {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.third {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.fourth {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}

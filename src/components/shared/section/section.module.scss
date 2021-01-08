@@ -1,0 +1,11 @@
+.root {
+  color: $text;
+  width: 100%;
+}
+
+.container {
+  max-width: r(1300);
+  margin: auto;
+  padding: r(70) r(20);
+  padding-bottom: 0;
+}

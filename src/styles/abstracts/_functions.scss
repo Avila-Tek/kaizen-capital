@@ -1,0 +1,25 @@
+$baseFontSize: 16;
+
+@function r($pixels, $context: $baseFontSize) {
+  @if unitless($pixels) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if unitless($context) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@function font($pixels, $context: $baseFontSize) {
+  @if unitless($pixels) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if unitless($context) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
