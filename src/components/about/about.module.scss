@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
-  @include media(md) {
+  @include media(lg) {
     flex-direction: row;
   }
 }
@@ -119,10 +119,10 @@
   align-items: center;
   padding: r(32) 0 r(32) 0;
   @include media(md) {
-    padding: r(52) r(30) r(30) r(68);
+    padding: r(52) r(30) r(0) r(30);
   }
   @include media(lg) {
-    padding: r(52) r(40) r(40) r(68);
+    padding: r(52) r(40) r(68) r(40);
   }
   p {
     font-size: r(16);
@@ -133,6 +133,10 @@
       font-weight: 300;
     }
     @include media(md) {
+      font-size: r(20);
+      line-height: 28px;
+    }
+    @include media(lg) {
       font-size: r(29);
       line-height: 37px;
     }

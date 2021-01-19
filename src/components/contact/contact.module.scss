@@ -36,15 +36,19 @@
   align-items: flex-start;
   text-align: center;
   @include media(md) {
-    margin-top: r(32);
+    margin-top: 0;
   }
   @include media(lg) {
+    margin-top: r(32);
     align-items: center;
   }
 
   .formTitle {
     @include headline(16, 18);
     @include media(md) {
+      @include headline(20, 28);
+    }
+    @include media(lg) {
       @include headline(29, 31);
     }
   }
@@ -71,10 +75,13 @@
       margin-top: r(50);
       margin-bottom: r(40);
       width: r(530);
+      margin-left: auto;
+      margin-right: auto;
     }
     @include media(lg) {
       margin-top: 0;
       width: 100%;
+      margin-bottom: r(70);
     }
   }
 

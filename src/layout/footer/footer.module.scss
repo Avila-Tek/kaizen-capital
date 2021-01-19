@@ -60,14 +60,19 @@
 .bannerWrapper,
 .bannerWrapper::before {
   color: white;
-  height: r(125);
+  height: r(200);
   @include media(md) {
-    height: r(170);
+    height: r(200);
   }
   @include media(lg) {
     height: r(445);
   }
   background-attachment: fixed;
+}
+
+.titleSmall {
+  text-align: center;
+  padding-top: 20px;
 }
 
 .titleContainer {
@@ -113,7 +118,7 @@
   flex-wrap: wrap;
   min-height: r(110);
   justify-content: center;
-  @include media(md) {
+  @include media(lg) {
     justify-content: space-between;
     max-height: r(110);
   }
@@ -143,6 +148,9 @@
 .socialLinks {
   margin-top: r(10);
   @include media(md) {
+    margin: r(10);
+  }
+  @include media(lg) {
     margin: 0;
   }
 }

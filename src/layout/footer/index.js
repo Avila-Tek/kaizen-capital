@@ -32,32 +32,39 @@ function KDABanner() {
   if (displaySize === null) return null;
 
   return (
-    <BackgroundImage
-      className={styles.bannerWrapper}
-      fluid={image.banner.childImageSharp.fluid}
-      alt={language.AboutBannerAlt}
-    >
-      <div className={styles.titleContainer}>
-        <h3>
+    displaySize === 'DESKTOP' ? (
+      <BackgroundImage
+        className={styles.bannerWrapper}
+        fluid={image.banner.childImageSharp.fluid}
+        alt={language.AboutBannerAlt}
+      >
+        <div className={styles.titleContainer}>
+          <h3>
+            Kaizen Capital es parte del grupo Kaizen Holdings
+          </h3>
+          <div className={styles.content}>
+            <Icon icon="brand-kaizen-holdings" />
+            <Icon icon="brand-kaizen-capital" />
+            <Icon icon="brand-kaizen-digital-agency" />
+            <Icon icon="brand-datacel" />
+            <Icon icon="brand-bloom" />
+            <Icon icon="brand-iselitas" />
+            <Icon icon="brand-socado" />
+          </div>
+        </div>
+      </BackgroundImage>
+    ) : (
+      <BackgroundImage
+        className={styles.bannerWrapper}
+        fluid={image.banner.childImageSharp.fluid}
+        alt={language.AboutBannerAlt}
+      >
+        <h3 className={styles.titleSmall}>
           Kaizen Capital es parte del grupo Kaizen Holdings
         </h3>
-        {displaySize === 'MOBILE' ? (
-          <div className={styles.content}>
-            <GroupCarousel />
-          </div>
-            ) : (
-              <div className={styles.content}>
-                <Icon icon="brand-kaizen-holdings" />
-                <Icon icon="brand-kaizen-capital" />
-                <Icon icon="brand-kaizen-digital-agency" />
-                <Icon icon="brand-datacel" />
-                <Icon icon="brand-bloom" />
-                <Icon icon="brand-iselitas" />
-                <Icon icon="brand-socado" />
-              </div>
-            )}
-      </div>
-    </BackgroundImage>
+        <GroupCarousel />
+      </BackgroundImage>
+    )
   );
 }
 

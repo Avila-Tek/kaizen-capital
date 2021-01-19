@@ -31,7 +31,7 @@ const LanguageDropdown = () => {
         <p className={styles.dropdownText}>
           {language.languageDropdown.language}
 
-          <Icon w="w14" icon="dropdown-arrow" />
+          <Icon className={`${styles.closed} ${activeScrolldown ? styles.opened : ''}`} w="w14" icon="dropdown-arrow" />
         </p>
       </div>
       <div className={styles.dropdownText} style={{ display: activeScrolldown ? 'block' : 'none' }}>
