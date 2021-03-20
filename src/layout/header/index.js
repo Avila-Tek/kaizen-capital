@@ -7,7 +7,7 @@ import { WindowContext } from 'contexts/window-context';
 import { LanguageContext } from 'contexts/language-context';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-import styles from './header.module.scss';
+import * as styles from './header.module.scss';
 
 const propTypes = {};
 const defaultProps = {};

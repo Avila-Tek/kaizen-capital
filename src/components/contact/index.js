@@ -7,7 +7,7 @@ import Spinner from 'components/shared/spinner';
 import Section from 'components/shared/section';
 import { scss } from 'utils';
 import Title from 'components/shared/multi-title';
-import styles from './contact.module.scss';
+import * as styles from './contact.module.scss';
 
 function Form() {
   const language = useContext(LanguageContext);

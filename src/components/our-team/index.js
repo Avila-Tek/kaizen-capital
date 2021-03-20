@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Section from "components/shared/section";
-import styles from "./our-team.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Section from 'components/shared/section';
+import * as styles from './our-team.module.scss';
 
 const propTypes = {};
 const defaultProps = {};

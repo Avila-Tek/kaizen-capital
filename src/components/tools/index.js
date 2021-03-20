@@ -7,7 +7,7 @@ import Img from 'components/shared/image';
 import { LanguageContext } from 'contexts/language-context';
 import { useStaticQuery, graphql } from 'gatsby';
 import Swiper from 'react-id-swiper';
-import styles from './tools.module.scss';
+import * as styles from './tools.module.scss';
 
 const propTypes = {};
 const defaultProps = {};
@@ -17,7 +17,7 @@ function ToolCard({ image, name }) {
     <div className={styles.toolSlide}>
       <div
         className={
-          image.childImageSharp.fluid.aspectRatio === 1
+          image.childImageSharp.gatsbyImageData.aspectRatio === 1
             ? styles.imgWrapper
             : styles.imgWrapperRectangularV
         }
@@ -54,91 +54,54 @@ function NavigationArrow({ previous, onClick, disabled }) {
 }
 
 function Tools() {
-  const images = useStaticQuery(graphql`
-    query {
-      Angular: file(relativePath: { eq: "angular.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 120, maxHeight: 120) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      React: file(relativePath: { eq: "react.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 120, maxHeight: 120) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      ReactNative: file(relativePath: { eq: "reactnative5.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 80, maxHeight: 80) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      Wordpress: file(relativePath: { eq: "wordpress.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 120, maxHeight: 120) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      Puppeteer: file(relativePath: { eq: "puppeteer.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 63, maxHeight: 92) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      D3: file(relativePath: { eq: "d3.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      Firebase: file(relativePath: { eq: "firebase.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      Gatsby: file(relativePath: { eq: "gatsby.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
-      Mongodb: file(relativePath: { eq: "mongodb.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-            presentationWidth
-            presentationHeight
-          }
-        }
-      }
+  const images = useStaticQuery(graphql`{
+  Angular: file(relativePath: {eq: "angular.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 120, height: 120, placeholder: NONE, layout: CONSTRAINED)
     }
-  `);
+  }
+  React: file(relativePath: {eq: "react.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 120, height: 120, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  ReactNative: file(relativePath: {eq: "reactnative5.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 80, height: 80, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  Wordpress: file(relativePath: {eq: "wordpress.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 120, height: 120, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  Puppeteer: file(relativePath: {eq: "puppeteer.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 63, height: 92, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  D3: file(relativePath: {eq: "d3.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 100, height: 100, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  Firebase: file(relativePath: {eq: "firebase.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 100, height: 100, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  Gatsby: file(relativePath: {eq: "gatsby.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 100, height: 100, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+  Mongodb: file(relativePath: {eq: "mongodb.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 100, height: 100, placeholder: NONE, layout: CONSTRAINED)
+    }
+  }
+}
+`);
 
   const [swiper, updateSwiper] = useState(null);
   const [previousDisabled, updatePrevious] = useState(true);

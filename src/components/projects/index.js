@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Section from 'components/shared/section';
 import Title from 'components/shared/multi-title';
-import styles from './projects.module.scss';
+import * as styles from './projects.module.scss';
 
 const propTypes = {};
 const defaultProps = {};

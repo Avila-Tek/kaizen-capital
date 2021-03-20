@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { scss } from 'utils';
-import styles from './multi-title.module.scss';
+import * as styles from './multi-title.module.scss';
 
 const propTypes = {
   name: PropTypes.string.isRequired,

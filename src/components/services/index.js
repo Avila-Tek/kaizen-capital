@@ -6,7 +6,7 @@ import Section from 'components/shared/section';
 import Title from 'components/shared/multi-title';
 import Img from 'components/shared/image';
 import { LanguageContext } from 'contexts/language-context';
-import styles from './services.module.scss';
+import * as styles from './services.module.scss';
 
 // const propTypes = {};
 const defaultProps = {};
@@ -62,38 +62,29 @@ function ServiceCard({ title, img, details = [], ...props }) {
 
 function Services() {
   const language = useContext(LanguageContext);
-  const data = useStaticQuery(graphql`
-    query {
-      consulting_img: file(relativePath: { eq: "consulting.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 535, maxHeight: 440, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      corporate_img: file(relativePath: { eq: "corporate-debt.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 535, maxHeight: 440, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      financial_img: file(relativePath: { eq: "financial-placements.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 535, maxHeight: 360, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      capital_img: file(relativePath: { eq: "capital-management.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 535, maxHeight: 360, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  consulting_img: file(relativePath: {eq: "consulting.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 535, height: 440, quality: 100, layout: CONSTRAINED)
     }
-  `);
+  }
+  corporate_img: file(relativePath: {eq: "corporate-debt.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 535, height: 440, quality: 100, layout: CONSTRAINED)
+    }
+  }
+  financial_img: file(relativePath: {eq: "financial-placements.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 535, height: 360, quality: 100, layout: CONSTRAINED)
+    }
+  }
+  capital_img: file(relativePath: {eq: "capital-management.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 535, height: 360, quality: 100, layout: CONSTRAINED)
+    }
+  }
+}
+`);
 
   return (
     <Section id={language.ServicesId}>

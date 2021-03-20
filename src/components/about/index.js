@@ -8,29 +8,26 @@ import Title from 'components/shared/multi-title';
 import Icon from 'components/shared/icon';
 import { LanguageContext } from 'contexts/language-context';
 import { scss } from 'utils';
-import styles from './about.module.scss';
+import * as styles from './about.module.scss';
 
 const propTypes = {};
 const defaultProps = {};
 
 function KDABanner() {
   const language = useContext(LanguageContext);
-  const image = useStaticQuery(graphql`
-    query {
-      banner: file(relativePath: { eq: "kc-banner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1300, maxHeight: 445, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const image = useStaticQuery(graphql`{
+  banner: file(relativePath: {eq: "kc-banner.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(quality: 100, layout: FULL_WIDTH)
     }
-  `);
+  }
+}
+`);
 
   return (
     <BackgroundImage
       className={styles.bannerWrapper}
-      fluid={image.banner.childImageSharp.fluid}
+      fluid={image.banner.childImageSharp.gatsbyImageData}
       alt={language.AboutBannerAlt}
     />
   );

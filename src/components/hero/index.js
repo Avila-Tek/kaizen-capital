@@ -6,24 +6,21 @@ import Img from 'components/shared/image';
 import Icon from 'components/shared/icon';
 import { LanguageContext } from 'contexts/language-context';
 import { scss } from 'utils';
-import styles from './hero.module.scss';
+import * as styles from './hero.module.scss';
 
 const propTypes = {};
 const defaultProps = {};
 
 function Hero() {
   const language = useContext(LanguageContext);
-  const data = useStaticQuery(graphql`
-    query {
-      hero: file(relativePath: { eq: "kc-hero.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1900, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  hero: file(relativePath: {eq: "kc-hero.png"}) {
+    childImageSharp {
+      gatsbyImageData(quality: 100, layout: FULL_WIDTH)
     }
-  `);
+  }
+}
+`);
   return (
     <Section bkgClassName={styles.root}>
       <Img className={styles.bkg} src={data.hero} alt={language.heroImgAlt} />

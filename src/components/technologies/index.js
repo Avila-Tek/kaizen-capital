@@ -8,7 +8,7 @@ import Section from 'components/shared/section';
 import Title from 'components/shared/multi-title';
 import Img from 'components/shared/image';
 import { scss } from 'utils';
-import styles from './technologies.module.scss';
+import * as styles from './technologies.module.scss';
 
 // const propTypes = {};
 // const defaultProps = {};
@@ -30,45 +30,34 @@ function TechCard({ image, teal, white, ...props }) {
 function Technologies() {
   const language = useContext(LanguageContext);
   const { displaySize } = useContext(WindowContext);
-  const images = useStaticQuery(graphql`
-    query {
-      SPA: file(relativePath: { eq: "SPA.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 350, maxHeight: 485, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      CMS: file(relativePath: { eq: "CMS.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 350, maxHeight: 485, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      MPA: file(relativePath: { eq: "MPA.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 350, maxHeight: 485, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      APPS: file(relativePath: { eq: "APPS.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 350, maxHeight: 485, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      ECOM: file(relativePath: { eq: "ECOM.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 350, maxHeight: 485, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const images = useStaticQuery(graphql`{
+  SPA: file(relativePath: {eq: "SPA.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 350, height: 485, quality: 100, layout: CONSTRAINED)
     }
-  `);
+  }
+  CMS: file(relativePath: {eq: "CMS.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 350, height: 485, quality: 100, layout: CONSTRAINED)
+    }
+  }
+  MPA: file(relativePath: {eq: "MPA.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 350, height: 485, quality: 100, layout: CONSTRAINED)
+    }
+  }
+  APPS: file(relativePath: {eq: "APPS.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 350, height: 485, quality: 100, layout: CONSTRAINED)
+    }
+  }
+  ECOM: file(relativePath: {eq: "ECOM.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 350, height: 485, quality: 100, layout: CONSTRAINED)
+    }
+  }
+}
+`);
 
   const swiperConfig = {
     centeredSlides: true,

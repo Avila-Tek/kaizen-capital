@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './spinner.module.scss';
+import * as styles from './spinner.module.scss';
 
 const propTypes = {};
 const defaultProps = {};

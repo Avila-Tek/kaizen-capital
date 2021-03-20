@@ -2,7 +2,7 @@ import React from 'react';
 import Swiper from 'react-id-swiper';
 import Icon from 'components/shared/icon';
 
-import styles from './GroupCarousel.module.scss';
+import * as styles from './GroupCarousel.module.scss';
 
 const GroupCarousel = () => {
     const params = {

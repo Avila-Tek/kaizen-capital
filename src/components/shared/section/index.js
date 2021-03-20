@@ -1,6 +1,6 @@
 import React from 'react';
 import { scss } from 'utils';
-import styles from './section.module.scss';
+import * as styles from './section.module.scss';
 
 function Section({ children, bkgClassName, className, ...props }) {
   return (

@@ -6,7 +6,7 @@ import { WindowContext } from 'contexts/window-context';
 import { LanguageContext } from 'contexts/language-context';
 import Icon from 'components/shared/icon';
 import Section from 'components/shared/section';
-import styles from './footer.module.scss';
+import * as styles from './footer.module.scss';
 
 import GroupCarousel from './GroupCarousel';
 
@@ -17,54 +17,49 @@ function KDABanner() {
   const language = useContext(LanguageContext);
   const context = useContext(WindowContext);
   const { displaySize } = context;
-  const image = useStaticQuery(graphql`
-    query {
-      banner: file(relativePath: { eq: "kc-banner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1300, maxHeight: 445, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
+  const image = useStaticQuery(graphql`{
+  banner: file(relativePath: {eq: "kc-banner.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(quality: 100, layout: FULL_WIDTH)
     }
-  `);
+  }
+}
+`);
 
   if (displaySize === null) return null;
 
-  return (
-    displaySize === 'DESKTOP' ? (
-      <BackgroundImage
-        className={styles.bannerWrapper}
-        fluid={image.banner.childImageSharp.fluid}
-        alt={language.AboutBannerAlt}
-      >
-        <div className={styles.titleContainer}>
-          <h3>
-            Kaizen Capital es parte del grupo Kaizen Holdings
-          </h3>
-          <div className={styles.content}>
-            <Icon icon="brand-kaizen-holdings" />
-            <Icon icon="brand-kaizen-capital" />
-            <Icon icon="brand-kaizen-digital-agency" />
-            <Icon icon="brand-datacel" />
-            <Icon icon="brand-bloom" />
-            <Icon icon="brand-iselitas" />
-            <Icon icon="brand-socado" />
-          </div>
-        </div>
-      </BackgroundImage>
-    ) : (
-      <BackgroundImage
-        className={styles.bannerWrapper}
-        fluid={image.banner.childImageSharp.fluid}
-        alt={language.AboutBannerAlt}
-      >
-        <h3 className={styles.titleSmall}>
+  return displaySize === 'DESKTOP' ? (
+    <BackgroundImage
+      className={styles.bannerWrapper}
+      fluid={image.banner.childImageSharp.gatsbyImageData}
+      alt={language.AboutBannerAlt}
+    >
+      <div className={styles.titleContainer}>
+        <h3>
           Kaizen Capital es parte del grupo Kaizen Holdings
         </h3>
-        <GroupCarousel />
-      </BackgroundImage>
-    )
+        <div className={styles.content}>
+          <Icon icon="brand-kaizen-holdings" />
+          <Icon icon="brand-kaizen-capital" />
+          <Icon icon="brand-kaizen-digital-agency" />
+          <Icon icon="brand-datacel" />
+          <Icon icon="brand-bloom" />
+          <Icon icon="brand-iselitas" />
+          <Icon icon="brand-socado" />
+        </div>
+      </div>
+    </BackgroundImage>
+  ) : (
+    <BackgroundImage
+      className={styles.bannerWrapper}
+      fluid={image.banner.childImageSharp.gatsbyImageData}
+      alt={language.AboutBannerAlt}
+    >
+      <h3 className={styles.titleSmall}>
+        Kaizen Capital es parte del grupo Kaizen Holdings
+      </h3>
+      <GroupCarousel />
+    </BackgroundImage>
   );
 }
 
