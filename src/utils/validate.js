@@ -9,6 +9,14 @@ const validate = language => values => {
     }
   }
 
+  if (values.phone && values.phone.touched) {
+    if (!values.phone.value) {
+      errors.phone = language.FormPhoneErrorRequired;
+    } else if (!/^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/i.test(values.phone.value)) {
+      errors.phone = language.languageDropdown.language == 'español' ? 'Ingresa un número valido (ejem: +584141234567 / 04141234567).': 'Enter a valid number (example: +011234567).';
+    }
+  }
+
   if (values.name && values.name.touched) {
     if (!values.name.value) {
       errors.name = language.FormNameErrorRequired;

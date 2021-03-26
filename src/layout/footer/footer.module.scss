@@ -154,3 +154,24 @@
     margin: 0;
   }
 }
+
+.upiconContainer{
+  position: absolute;
+  top: -28px;
+  right: 74px;
+  
+  @include media(md) {
+    right: 100px;
+    top: -32px;
+  }
+  @include media(lg) {
+    top: 0px;
+  }
+}
+
+.upicon {
+  width: 60px;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}

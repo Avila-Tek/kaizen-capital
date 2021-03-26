@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import PropTypes from "prop-types";
+import emailjs from 'emailjs-com';
 import { useFormInput, useErrors, useSubmitReady } from 'hooks/useForm';
 import { useSubmitState } from 'hooks/useSubmitState';
 import { LanguageContext } from 'contexts/language-context';
@@ -20,7 +20,6 @@ function Form() {
   const emailErrors = useErrors({ email: email.state }, language);
   const msgErrors = useErrors({ msg: msg.state }, language);
   const phoneErrors = useErrors({ phone: phone.state }, language);
-
   const submitReady = useSubmitReady(
     {
       name: name.state,
@@ -31,13 +30,21 @@ function Form() {
     language
   );
 
-  function formSubmit(event) {
-    event.preventDefault();
+  function formSubmit(e) {
+    e.preventDefault();
     const data = {
       name: name.state.value,
       email: email.state.value,
       msg: msg.state.value,
-    };
+    }
+    console.log(e.target)
+    emailjs.sendForm('service_9qvi8yf', 'template_rm8kly5', e.target, 'user_tWnZyf1UmLjnJWTZ4bFV6')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  
     return fetch('https://hooks.zapier.com/hooks/catch/5452101/oojldc5/', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -64,7 +71,7 @@ function Form() {
             <p>{language.FormNameField}</p>
             <input
               id={language.FormNameField}
-              name={language.FormNameField}
+              name="name"
               {...name.events}
               value={name.state.value}
             />
@@ -79,7 +86,7 @@ function Form() {
             <p>{language.FormEmailField}</p>
             <input
               id={language.FormEmailField}
-              name={language.FormEmailField}
+              name="email"
               {...email.events}
               value={email.state.value}
               type="email"
@@ -95,7 +102,7 @@ function Form() {
             <p>{language.FormPhoneField}</p>
             <input
               id={language.FormPhoneField}
-              name={language.FormPhoneField}
+              name="phone"
               {...phone.events}
               value={phone.state.value}
               type="tel"
@@ -111,7 +118,7 @@ function Form() {
             <p>{language.FormMessageField}</p>
             <textarea
               id={language.FormMessageField}
-              name={language.FormMessageField}
+              name="msg"
               {...msg.events}
               value={msg.state.value}
               rows="1"

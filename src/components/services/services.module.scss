@@ -17,6 +17,35 @@
     grid-gap: r(8);
   }
 }
+.paragraphWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: r(32) 0 r(32) 0;
+  @include media(md) {
+    padding: r(52) r(30) r(0) r(30);
+  }
+  @include media(lg) {
+    padding: r(52) r(40) r(68) r(40);
+  }
+  p {
+    font-size: r(16);
+    line-height: 18px;
+    font-weight: 600;
+    text-align: center;
+    &:first-child {
+      font-weight: 300;
+    }
+    @include media(md) {
+      font-size: r(20);
+      line-height: 28px;
+    }
+    @include media(lg) {
+      font-size: r(29);
+      line-height: 37px;
+    }
+  }
+}
 
 .cardWrapper {
   overflow: hidden;

@@ -10,6 +10,19 @@ import styles from './services.module.scss';
 
 // const propTypes = {};
 const defaultProps = {};
+function AboutParagraph({ firstParagraph, secondParagraph }) {
+  return (
+    <div className={styles.paragraphWrapper}>
+      <p>
+        {firstParagraph}
+      </p>
+      <br />
+      <p>
+        {secondParagraph}
+      </p>
+    </div>
+  );
+}
 
 function ServiceCard({ title, img, details = [], ...props }) {
   const detailsRef = useRef(null);
@@ -97,6 +110,14 @@ function Services() {
 
   return (
     <Section id={language.ServicesId}>
+      <Title
+        name={language.target}
+        teal=""
+        white=""
+      />
+      <AboutParagraph
+          secondParagraph={language.targetContent}
+        />
       <Title
         name={language.ServicesTitle}
         teal=""

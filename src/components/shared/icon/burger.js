@@ -1,10 +1,8 @@
 import React from 'react';
 
 export default ({ ...props }) => (
-  <svg id="Menu_1_" xmlns="http://www.w3.org/2000/svg" width="29.84" height="14.92" viewBox="0 0 29.84 14.92">
-    <path id="Path_16" data-name="Path 16" d="M.932,98.108H28.907a.932.932,0,1,0,0-1.865H.932a.932.932,0,1,0,0,1.865Z" transform="translate(0 -96.243)" fill="#fff" />
-    <path id="Path_17" data-name="Path 17" d="M28.907,180.455H.932a.932.932,0,0,0,0,1.865H28.907a.932.932,0,1,0,0-1.865Z" transform="translate(0 -173.928)" fill="#fff" />
-    <path id="Path_18" data-name="Path 18" d="M139.885,264.667h-18.65a.932.932,0,0,0,0,1.865h18.65a.932.932,0,1,0,0-1.865Z" transform="translate(-110.978 -251.612)" fill="#fff" />
+  <svg id="Menu_1_" xmlns="http://www.w3.org/2000/svg" width="60" height="30" viewBox="0 0 448 512">
+    <path fill="#fff" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/>
   </svg>
 
 );

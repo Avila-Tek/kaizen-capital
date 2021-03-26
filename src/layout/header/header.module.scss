@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  height: r(70);
+  height: r(100);
   width: 100%;
   transition: all 0.3s;
   display: flex;
@@ -32,16 +32,16 @@
 .iconsWrapper {
   display: flex;
   align-items: flex-end;
-  width: r(100);
+  width: r(160);
   padding: 40px 0;
   @include media(md) {
     margin: 0;
-    width: r(100);
+    width: r(160);
   }
   @include media(lg) {
     margin-left: r(90);
     margin-right: r(160);
-    width: r(100);
+    width: r(160);
     padding: 0;
   }
 }
@@ -61,6 +61,7 @@
   display: flex;
   justify-content: space-between;
   margin-right: r(90);
+  overflow: hidden;
 }
 
 .link {
