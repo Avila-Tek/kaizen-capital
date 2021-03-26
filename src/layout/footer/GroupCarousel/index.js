@@ -8,7 +8,11 @@ const GroupCarousel = () => {
     const params = {
       slidesPerView: 3,
       spaceBetween: 30,
-      loop: true
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
     };
     return (
       <div className={styles.sliderWrapper}>
@@ -16,8 +20,6 @@ const GroupCarousel = () => {
           <div className={styles.slide}><Icon icon="brand-kaizen-holdings" /></div>
           <div className={styles.slide}><Icon icon="brand-kaizen-capital" /></div>
           <div className={styles.slide}><Icon icon="brand-kaizen-digital-agency" /></div>
-          <div className={styles.slide}><Icon icon="brand-datacel" /></div>
-          <div className={styles.slide}><Icon icon="brand-bloom" /></div>
           <div className={styles.slide}>
             <Icon icon="brand-iselitas" />
           </div>

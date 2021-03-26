@@ -65,7 +65,7 @@ function Form() {
         <br />
         {language.FormLine2}
       </p>
-      <form onSubmit={submitHandler}>
+      <form action="https://formsubmit.co/contacto@kaizen-capital.net" method="POST">
         <div className={styles.input}>
           <label htmlFor={language.FormNameField} className={styles.label}>
             <p>{language.FormNameField}</p>

@@ -53,8 +53,6 @@ function KDABanner() {
           <Icon icon="brand-kaizen-holdings" />
           <Icon icon="brand-kaizen-capital" />
           <Icon icon="brand-kaizen-digital-agency" />
-          <Icon icon="brand-datacel" />
-          <Icon icon="brand-bloom" />
           <Icon icon="brand-iselitas" />
           <Icon icon="brand-socado" />
         </div>
