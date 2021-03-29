@@ -27,7 +27,10 @@ const LanguageDropdown = () => {
   const language = useContext(LanguageContext);
   return (
     <div className={styles.languagedropdownWrapper}>
-      <div className={styles.languageDropdown} onClick={() => setActiveScrolldown(!activeScrolldown)}>
+      <div
+        className={styles.languageDropdown}
+        onClick={() => setActiveScrolldown(!activeScrolldown)}
+      >
         <p className={styles.dropdownText}>
           {language.languageDropdown.language}
 
@@ -54,6 +57,7 @@ const SocialMedia = () => {
     );
   };
 
+  // eslint-disable-next-line max-len
   // style={{ width: '30px', height: '30px', <display:></display:> 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#01c1ab', borderRadius: '50%', cursor: 'pointer' }}
 
   return (

@@ -101,14 +101,14 @@ function Services() {
 
   return (
     <Section id={language.ServicesId}>
-      <Title
+      {/* <Title
         name={language.target}
         teal=""
         white=""
       />
       <AboutParagraph
         secondParagraph={language.targetContent}
-      />
+      /> */}
       <Title
         name={language.ServicesTitle}
         teal=""
