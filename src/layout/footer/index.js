@@ -21,7 +21,7 @@ function KDABanner() {
   const { displaySize } = context;
   const placeholderImage = useStaticQuery(graphql`
     {
-      banner: file(relativePath: { eq: "hero.jpg" }) {
+      banner: file(relativePath: { eq: "hero.png" }) {
         childImageSharp {
           gatsbyImageData(
             quality: 100
