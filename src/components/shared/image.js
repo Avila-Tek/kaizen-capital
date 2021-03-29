@@ -1,9 +1,13 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Image = ({ src, ...props }) => {
   return (
-    <Img className={props.className ? props.className : ''} fluid={src.childImageSharp.fluid} />
+    <GatsbyImage
+      image={src.childImageSharp.gatsbyImageData}
+      className={props.className ? props.className : ''}
+      alt=""
+    />
   );
 };
 

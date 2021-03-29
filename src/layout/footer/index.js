@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import React, { useContext } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 // import PropTypes from 'prop-types';
-import BackgroundImage from "gatsby-background-image";
-import { WindowContext } from "contexts/window-context";
-import { LanguageContext } from "contexts/language-context";
-import Icon from "components/shared/icon";
-import Section from "components/shared/section";
-import styles from "./footer.module.scss";
+import BackgroundImage from 'gatsby-background-image';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
+import { WindowContext } from 'contexts/window-context';
+import { LanguageContext } from 'contexts/language-context';
+import Icon from 'components/shared/icon';
+import Section from 'components/shared/section';
+import * as styles from './footer.module.scss';
 
-import GroupCarousel from "./GroupCarousel";
+import GroupCarousel from './GroupCarousel';
 
 const propTypes = {};
 const defaultProps = {};
@@ -17,24 +19,33 @@ function KDABanner() {
   const language = useContext(LanguageContext);
   const context = useContext(WindowContext);
   const { displaySize } = context;
-  const image = useStaticQuery(graphql`
-    query {
+  const placeholderImage = useStaticQuery(graphql`
+    {
       banner: file(relativePath: { eq: "hero.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1300, maxHeight: 445, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 100
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+            width: 1300
+            height: 445
+          )
         }
       }
     }
   `);
 
+  const image = getImage(placeholderImage.banner);
+  const bgImage = convertToBgImage(image);
+
   if (displaySize === null) return null;
 
-  return displaySize === "DESKTOP" ? (
+  return displaySize === 'DESKTOP' ? (
     <BackgroundImage
+      Tag="section"
+      {...bgImage}
+      preserveStackingContext
       className={styles.bannerWrapper}
-      fluid={image.banner.childImageSharp.fluid}
       alt={language.AboutBannerAlt}
     >
       <div className={styles.titleContainer}>
@@ -45,7 +56,7 @@ function KDABanner() {
               <path
                 fill="rgba(33, 74, 121, 0.9)"
                 d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"
-              ></path>
+              />
             </svg>
           </a>
         </div>
@@ -60,8 +71,9 @@ function KDABanner() {
     </BackgroundImage>
   ) : (
     <BackgroundImage
+      Tag="section"
       className={styles.bannerWrapper}
-      fluid={image.banner.childImageSharp.fluid}
+      {...bgImage}
       alt={language.AboutBannerAlt}
     >
       <div className={styles.upiconContainer}>
@@ -70,7 +82,7 @@ function KDABanner() {
             <path
               fill="rgba(33, 74, 121, 0.9)"
               d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"
-            ></path>
+            />
           </svg>
         </a>
       </div>
@@ -97,7 +109,8 @@ function Footer() {
             </p>
             <p className={styles.legalInfo}>
               2020 ®Kaizen Capital. Todos los derechos reservados | Desarrollo
-              por{" "}
+              por
+              {' '}
               <a href="https://kd.agency/" target="__blank">
                 kd.agency
               </a>

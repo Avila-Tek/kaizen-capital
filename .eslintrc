@@ -6,6 +6,7 @@
     "node": true
   },
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "import/no-unresolved": "off",
     "global-require": 0,
     "import/no-dynamic-require": 0,

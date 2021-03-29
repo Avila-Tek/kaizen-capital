@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './icon.module.scss';
+import * as styles from './icon.module.scss';
 
 export default ({ ...props }) => (
   <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="70" height="54.513" viewBox="0 0 141.924 54.513">

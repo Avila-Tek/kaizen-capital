@@ -7,7 +7,7 @@ import Spinner from 'components/shared/spinner';
 import Section from 'components/shared/section';
 import { scss } from 'utils';
 import Title from 'components/shared/multi-title';
-import styles from './contact.module.scss';
+import * as styles from './contact.module.scss';
 
 function Form() {
   const language = useContext(LanguageContext);
@@ -36,15 +36,15 @@ function Form() {
       name: name.state.value,
       email: email.state.value,
       msg: msg.state.value,
-    }
-    console.log(e.target)
+    };
+    console.log(e.target);
     emailjs.sendForm('service_9qvi8yf', 'template_rm8kly5', e.target, 'user_tWnZyf1UmLjnJWTZ4bFV6')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
           console.log(error.text);
       });
-  
+
     return fetch('https://hooks.zapier.com/hooks/catch/5452101/oojldc5/', {
       method: 'POST',
       body: JSON.stringify(data),

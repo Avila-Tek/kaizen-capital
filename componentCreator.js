@@ -15,7 +15,7 @@ exec(command, () => {
     `./src/components/${componentName}/index.js`,
     `import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './${componentName}.module.scss';
+import * as styles from './${componentName}.module.scss';
 
 const propTypes = {};
 const defaultProps = {};

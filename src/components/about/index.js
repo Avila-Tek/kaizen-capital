@@ -2,35 +2,45 @@ import React, { useState, useContext } from 'react';
 // import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { getImage } from 'gatsby-plugin-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { Waypoint } from 'react-waypoint';
 import Section from 'components/shared/section';
 import Title from 'components/shared/multi-title';
 import Icon from 'components/shared/icon';
 import { LanguageContext } from 'contexts/language-context';
 import { scss } from 'utils';
-import styles from './about.module.scss';
+import * as styles from './about.module.scss';
 
 const propTypes = {};
 const defaultProps = {};
 
 function KDABanner() {
   const language = useContext(LanguageContext);
-  const image = useStaticQuery(graphql`
-    query {
+  const placeholderImage = useStaticQuery(graphql`
+    {
       banner: file(relativePath: { eq: "kc-banner.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1300, maxHeight: 445, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            quality: 100
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+            width: 1300
+            height: 445
+          )
         }
       }
     }
   `);
+  const image = getImage(placeholderImage.banner);
+  const bgImage = convertToBgImage(image);
 
   return (
     <BackgroundImage
+      Tag="section"
+      {...bgImage}
+      preserveStackingContext
       className={styles.bannerWrapper}
-      fluid={image.banner.childImageSharp.fluid}
       alt={language.AboutBannerAlt}
     />
   );

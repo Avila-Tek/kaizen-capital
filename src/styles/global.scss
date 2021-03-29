@@ -1,4 +1,4 @@
-@import "react-id-swiper/lib/styles/scss/swiper.scss";
+@import "swiper/swiper.scss";
 
 *,
 *:before,
@@ -6,7 +6,14 @@
   box-sizing: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p, div {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
   cursor: default;
 }
 
@@ -204,8 +211,7 @@ body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
 }
 body::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
+  background-color: var(--thumbBG);
   border-radius: 6px;
   border: 3px solid var(--scrollbarBG);
 }
-
