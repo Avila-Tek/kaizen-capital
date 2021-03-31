@@ -64,7 +64,8 @@
     text-transform: uppercase;
     position: absolute;
     left: r(40);
-    bottom: r(20);
+
+    top: r(20);
     z-index: 2;
     font-weight: bold;
     overflow: hidden;
@@ -76,11 +77,17 @@
     }
     @include media(lg) {
       @include headline(24, 33);
+      bottom: r(20);
+      top: inherit;
     }
   }
 
+  .title2 {
+    margin-bottom: 5%;
+  }
+
   .details {
-    opacity: 0;
+    
     text-transform: none;
     font-weight: normal;
     transition: opacity 0.6s, height 0.6s;
@@ -91,6 +98,7 @@
       @include headline(16, 22);
     }
     @include media(lg) {
+      opacity: 0;
       @include headline(20, 27);
     }
   }
@@ -116,6 +124,14 @@
   z-index: 1;
   opacity: 0;
   transition: opacity 0.6s 0.3s;
+}
+
+.overlay2 {
+  background-color: RGB(33, 74, 121, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
 .cardWrapper:hover > .overlay {

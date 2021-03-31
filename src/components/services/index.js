@@ -6,6 +6,7 @@ import Section from 'components/shared/section';
 import Title from 'components/shared/multi-title';
 import Img from 'components/shared/image';
 import { LanguageContext } from 'contexts/language-context';
+import { WindowContext } from 'contexts/window-context';
 import * as styles from './services.module.scss';
 
 // const propTypes = {};
@@ -26,9 +27,19 @@ function AboutParagraph({ firstParagraph, secondParagraph }) {
 
 function ServiceCard({ title, img, details = [], ...props }) {
   const detailsRef = useRef(null);
+  const context = useContext(WindowContext);
+  const { displaySize } = context;
 
   const [open, toggleOpen] = useState(false);
   const [height, setHeight] = useState(0);
+  useEffect(()=>{
+    if(displaySize !== 'DESKTOP'){
+      toggleOpen(true)
+    }
+    else {
+      return toggleOpen(false)
+    }
+  }, [displaySize])
 
   useEffect(() => {
     if (open && detailsRef) {
@@ -46,8 +57,8 @@ function ServiceCard({ title, img, details = [], ...props }) {
       detailsRef.current.style.height = 0;
     }
   }
-
-  return (
+  if (displaySize === null) return null;
+  return displaySize === 'DESKTOP' ? (
     <div
       onMouseEnter={() => {
         toggleOpen(!open);
@@ -68,6 +79,22 @@ function ServiceCard({ title, img, details = [], ...props }) {
         </div>
       </div>
       <div className={styles.overlay} />
+      <Img className={styles.img} src={img} />
+    </div>
+  ): (
+
+    <div
+      className={styles.cardWrapper}
+    >
+      <div className={styles.title}>
+        <div className={styles.title2} dangerouslySetInnerHTML={{ __html: title }} />
+        <div className={styles.details} ref={detailsRef}>
+          {details.map(detail => (
+            <div key={detail} dangerouslySetInnerHTML={{ __html: detail }} />
+          ))}
+        </div>
+      </div>
+      <div className={styles.overlay2} />
       <Img className={styles.img} src={img} />
     </div>
   );
