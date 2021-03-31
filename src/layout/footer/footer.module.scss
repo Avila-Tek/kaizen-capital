@@ -60,9 +60,9 @@
 .bannerWrapper,
 .bannerWrapper::before {
   color: white;
-  height: r(200);
+  height: r(240);
   @include media(md) {
-    height: r(200);
+    height: r(220);
   }
   @include media(lg) {
     height: r(445);
@@ -158,7 +158,7 @@
 
 .upiconContainer{
   position: absolute;
-  top: -28px;
+  top: -22px;
   right: 74px;
   
   @include media(md) {
@@ -171,8 +171,9 @@
 }
 
 .upicon {
-  width: 60px;
-  position: absolute;
-  background: white;
-  border-radius: 50%;
+  padding: 15px;
+    width: 55px;
+    position: absolute;
+    background: RGB(52, 123, 123, 0.8);
+    border-radius: 5px;
 }

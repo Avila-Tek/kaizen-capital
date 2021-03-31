@@ -101,7 +101,6 @@
   text-align: center;
   h2 {
     color: $white;
-    font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
     @include headline(20, 22);
     @include media(md) {

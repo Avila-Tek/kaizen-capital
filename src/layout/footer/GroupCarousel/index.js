@@ -9,6 +9,10 @@ const GroupCarousel = () => {
       slidesPerView: 3,
       spaceBetween: 30,
       loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
@@ -20,12 +24,8 @@ const GroupCarousel = () => {
           <div className={styles.slide}><Icon icon="brand-kaizen-holdings" /></div>
           <div className={styles.slide}><Icon icon="brand-kaizen-capital" /></div>
           <div className={styles.slide}><Icon icon="brand-kaizen-digital-agency" /></div>
-          <div className={styles.slide}>
-            <Icon icon="brand-iselitas" />
-          </div>
-          <div className={styles.slide}>
-            <Icon icon="brand-socado" />
-          </div>
+          <div className={styles.slide}><Icon icon="brand-iselitas" /></div>
+          <div className={styles.slide}><Icon icon="brand-socado" /></div>
         </Swiper>
       </div>
     );

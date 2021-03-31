@@ -1,4 +1,5 @@
-@import "swiper/swiper.scss";
+@import "./swiper/swiper.scss";
+@import "../css/typography.scss";
 
 *,
 *:before,
@@ -36,6 +37,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  font-family: "Freda-Sans-Std", georgia, serif;
 }
 
 a {
@@ -165,8 +167,9 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+  font-family: "Freda-Sans-Std", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
+    src: local('Freda-Sans-Std') url("../fonts/Fedra-Sans-Std-Normal_17254.ttf")  format('truetype');  
   font-display: swap;
   padding: 0.2em 0;
 }

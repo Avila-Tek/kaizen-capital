@@ -40,11 +40,7 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Noto Sans', 'Oswald', 'Poppins'],
-        },
-      },
+      
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
