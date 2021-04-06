@@ -61,7 +61,7 @@
   "scripts": {
     "component": "node componentCreator.js",
     "deploy": "yarn build && firebase deploy --only hosting",
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run dev",
