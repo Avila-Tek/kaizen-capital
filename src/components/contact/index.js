@@ -144,7 +144,7 @@ function Contact() {
   return (
     <Section className={styles.section} id={language.ContactId}>
       <Title
-        name="Contáctanos"
+        name={language.contactUs}
         teal=""
         white=""
       />

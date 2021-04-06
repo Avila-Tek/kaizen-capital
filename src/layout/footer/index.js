@@ -49,7 +49,7 @@ function KDABanner() {
       alt={language.AboutBannerAlt}
     >
       <div className={styles.titleContainer}>
-        <h3>Kaizen Capital es parte del grupo Kaizen Holdings</h3>
+        <h3>{language.group}</h3>
         <div className={styles.upiconContainer}>
           <a className={styles.upicon} href={language.links[0].href}>
           <svg viewBox="0 0 446.62 272.85">
@@ -99,11 +99,10 @@ function Footer() {
           <Icon className={styles.footerLogo} icon="footer-logo" />
           <div className={styles.footerInfo}>
             <p className={styles.address}>
-              Dirección: Urb. Las Mercedes, Caracas, Venezuela.
+              Urb. Las Mercedes, Caracas – Venezuela.
             </p>
-            <p className={styles.legalInfo}>
-              2020 ®Kaizen Capital. Todos los derechos reservados | Desarrollo
-              por
+            <p className={styles.legalInfo}>{`
+              2021 ®Kaizen Capital. ${language.rights}`}
               {' '}
               <a href="https://kd.agency/" target="__blank">
                 kd.agency

@@ -14,18 +14,18 @@ module.exports = {
   /* Navbar */
   linkTitle: 'Ir a la sección de',
   links: [
-    { name: 'inicio', href: '/es/#' },
-    { name: 'quiénes somos', href: `/es/#${AboutUsId}` },
-    { name: 'servicios', href: `/es/#${ServicesId}` },
+    { name: 'Inicio', href: '/es/#' },
+    { name: 'Quiénes somos', href: `/es/#${AboutUsId}` },
+    { name: 'Servicios', href: `/es/#${ServicesId}` },
     // { name: 'tecnologías', href: `/es/#${TechId}` },
     // { name: 'proyectos', href: `/es/#${ProjectsId}` },
-    { name: 'contáctanos', href: `/es/#${ContactId}` },
+    { name: 'Contáctanos', href: `/es/#${ContactId}` },
   ],
 
   /* Navbar Language Dropdown */
   languageDropdown: {
-    language: 'español',
-    otherLanguages: [{ name: 'english', href: '/en/' }],
+    language: 'Español',
+    otherLanguages: [{ name: 'English', href: '/en/' }],
   },
 
   /* Hero Section */
@@ -91,6 +91,7 @@ module.exports = {
   TechnologiesTitle: 'Nuestras tecnologías',
   /* Contact Us Section */
   ContactId,
+  contactUs: 'Contátanos',
   FormTitlePrimary: '¿Qué Necesitas?',
   FormTitleSecondary: 'Nosotros Nos Encargamos',
   FormLine1: 'Contamos con los mejores profesionales',
@@ -107,8 +108,10 @@ module.exports = {
   FormNameErrorRequired: 'Ingresa tu nombre!',
   FormMsgErrorRequired: 'Ingresa tu mensaje!',
   FormPhoneErrorRequired: 'Ingresa tu número telefónico!',
-  FormPhoneErrorWrong: 'Ingresa un número valido (ejem: +584141234567 / 04141234567).',
+  FormPhoneErrorWrong: 'Número invalido.',
   /* Footer */
   BackToTop: 'Volver al inicio',
   LinkToTop: '/es/#',
+  rights: 'Todos los derechos reservados | Desarrollo por',
+  group: 'Kaizen Capital es parte del grupo Kaizen Holdings',
 };

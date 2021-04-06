@@ -12,8 +12,8 @@
     grid-gap: r(6);
   }
   @include media(lg) {
-    grid-template-columns: repeat(2, r(625));
-    grid-template-rows: repeat(2, r(420));
+    grid-template-columns: repeat(2, r(470));
+    grid-template-rows: repeat(2, r(315));
     grid-gap: r(8);
   }
 }
