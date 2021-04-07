@@ -65,6 +65,7 @@ function AboutParagraph({ firstParagraph, secondParagraph }) {
         {firstParagraph}
       </p>
       <br />
+      <br />
       <p>
         {secondParagraph}
       </p>

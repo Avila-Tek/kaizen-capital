@@ -101,6 +101,7 @@
   text-align: center;
   h2 {
     color: $white;
+    margin: 10px;
     font-weight: 600;
     @include headline(20, 22);
     @include media(md) {

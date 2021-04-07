@@ -30,7 +30,8 @@ module.exports = {
 
   /* Hero Section */
   heroImgAlt: 'Oficinas Kaizen',
-  heroSubtitle: 'Impulsa tu',
+  heroSubtitle: 'Impulsa',
+  heroSubtitle2: 'tu',
   heroTitle: 'Crecimiento Financiero',
   heroCTAText: 'Saber Más',
   heroCTALink: `/es/#${AboutUsId}`,
@@ -91,7 +92,7 @@ module.exports = {
   TechnologiesTitle: 'Nuestras tecnologías',
   /* Contact Us Section */
   ContactId,
-  contactUs: 'Contátanos',
+  contactUs: 'Contáctanos',
   FormTitlePrimary: '¿Qué Necesitas?',
   FormTitleSecondary: 'Nosotros Nos Encargamos',
   FormLine1: 'Contamos con los mejores profesionales',

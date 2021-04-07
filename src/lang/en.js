@@ -30,7 +30,8 @@ module.exports = {
 
   /* Hero Section */
   heroImgAlt: "Kaizen's Office",
-  heroSubtitle: 'Boost your',
+  heroSubtitle: 'Boost',
+  heroSubtitle2: 'your',
   heroTitle: 'financial growth',
   heroCTAText: 'Learn More About Us',
   heroCTALink: `/en/#${AboutUsId}`,
@@ -49,7 +50,7 @@ module.exports = {
   AboutFirstColSubTitle: 'Quality Manegement',
   AboutSecondColTitle: 'Foster relationships of trust.',
   AboutSecondColSubtitle: 'We Leave A Mark',
-  AboutThirdColTitle: 'Provide security and certainty in all financial operations',
+  AboutThirdColTitle: 'Provide security and certainty in all financial operations.',
   AboutThirdColSubtitle: 'Goal Oriented',
   AboutFourthColTitle: 'Offer the best service experience for our clients.',
   /* Services Section */

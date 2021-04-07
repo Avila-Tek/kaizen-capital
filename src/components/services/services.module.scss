@@ -9,12 +9,12 @@
     display: grid;
     grid-template-columns: repeat(2, r(360));
     grid-template-rows: r(200) r(200);
-    grid-gap: r(6);
+    grid-gap: r(25);
   }
   @include media(lg) {
     grid-template-columns: repeat(2, r(470));
     grid-template-rows: repeat(2, r(315));
-    grid-gap: r(8);
+    grid-gap: r(40);
   }
 }
 .paragraphWrapper {
@@ -64,6 +64,7 @@
     text-transform: uppercase;
     position: absolute;
     left: r(40);
+    font-size: 10px;
 
     top: r(20);
     z-index: 2;
@@ -79,6 +80,7 @@
       @include headline(24, 33);
       bottom: r(20);
       top: inherit;
+      font-size: 1.2rem;
     }
   }
 

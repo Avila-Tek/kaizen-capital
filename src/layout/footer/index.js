@@ -81,7 +81,7 @@ function KDABanner() {
         </a>
       </div>
       <h3 className={styles.titleSmall}>
-        Kaizen Capital es parte del grupo Kaizen Holdings
+        {language.group}
       </h3>
       <GroupCarousel />
     </BackgroundImage>
