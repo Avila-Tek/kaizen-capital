@@ -12,10 +12,10 @@ import * as styles from './header.module.scss';
 const propTypes = {};
 const defaultProps = {};
 
-function NavItem({ name, href }) {
+function NavItem({ name, href, setActiveNav }) {
   const language = useContext(LanguageContext);
   return (
-    <Link className={styles.link} to={href} title={`${language.linkTitle} ${name}`}>
+    <Link onClick={()=> setActiveNav(false)} className={styles.link} to={href} title={`${language.linkTitle} ${name}`}>
       {name}
       <div className={styles.line} />
     </Link>
@@ -104,7 +104,7 @@ function Header() {
           <div className={`${styles.navWrapperMdSm} ${activeNav ? `${styles.active}` : ''}`}>
             <div className={styles.linksWrapper}>
               {language.links.map(item => (
-                <NavItem onClick={() => setActiveNav(false)} {...item} key={item.name} />
+                <NavItem setActiveNav={setActiveNav} {...item} key={item.name} />
               ))}
               <span style={{ height: '30px' }} />
               <LanguageDropdown />
