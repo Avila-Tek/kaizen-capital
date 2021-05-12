@@ -14,7 +14,7 @@ const defaultProps = {};
 function Hero() {
   const language = useContext(LanguageContext);
   const data = useStaticQuery(graphql`{
-  hero: file(relativePath: {eq: "kc-hero.png"}) {
+  hero: file(relativePath: {eq: "kc-hero.jpg"}) {
     childImageSharp {
       gatsbyImageData(quality: 100, layout: FULL_WIDTH)
     }

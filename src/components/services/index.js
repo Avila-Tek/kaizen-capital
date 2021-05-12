@@ -78,7 +78,7 @@ function ServiceCard({ title, img, details = [], ...props }) {
           ))}
         </div>
       </div>
-      <div className={styles.overlay} />
+      <div className={styles.overlay2} />
       <Img className={styles.img} src={img} />
     </div>
   ): (
@@ -103,22 +103,22 @@ function ServiceCard({ title, img, details = [], ...props }) {
 function Services() {
   const language = useContext(LanguageContext);
   const data = useStaticQuery(graphql`{
-  consulting_img: file(relativePath: {eq: "consulting.png"}) {
+  consulting_img: file(relativePath: {eq: "consulting.jpg"}) {
     childImageSharp {
       gatsbyImageData(width: 535, height: 440, quality: 100, layout: CONSTRAINED)
     }
   }
-  corporate_img: file(relativePath: {eq: "corporate-debt.png"}) {
+  corporate_img: file(relativePath: {eq: "corporate-debt.jpg"}) {
     childImageSharp {
       gatsbyImageData(width: 535, height: 440, quality: 100, layout: CONSTRAINED)
     }
   }
-  financial_img: file(relativePath: {eq: "financial-placements.png"}) {
+  financial_img: file(relativePath: {eq: "capital-management.jpg"}) {
     childImageSharp {
       gatsbyImageData(width: 535, height: 360, quality: 100, layout: CONSTRAINED)
     }
   }
-  capital_img: file(relativePath: {eq: "capital-management.png"}) {
+  capital_img: file(relativePath: {eq: "financial-placements.jpg"}) {
     childImageSharp {
       gatsbyImageData(width: 535, height: 360, quality: 100, layout: CONSTRAINED)
     }

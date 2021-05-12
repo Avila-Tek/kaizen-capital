@@ -130,7 +130,7 @@
 }
 
 .overlay2 {
-  background-color: RGB(33, 74, 121, 0.5);
+  background: linear-gradient(to top, RGB(33, 74, 121, 0.9), RGB(33, 74, 121, 0.4) ,RGB(33, 74, 121, 0.1));
   width: 100%;
   height: 100%;
   position: absolute;
