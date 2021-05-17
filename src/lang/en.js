@@ -65,7 +65,7 @@ module.exports = {
   ExpertsInner: ['We offer return on idle capital plans with attractive interest rates.'],
   BrandingTitle: 'Capital Management',
   BrandingInner: ['We provide a broker service for payments to suppliers at an international level.'],
-  PublicityTitle: 'Lifting of corporate debt',
+  PublicityTitle: 'CORPORATE DEBT MANAGEMENT',
   PublicityInner: ['We work together with companies to obtain liquidity for their operations.'],
   /* Technologies Section */
   TechId,
