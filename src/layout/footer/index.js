@@ -98,9 +98,6 @@ function Footer() {
         <Section className={styles.footerSection}>
           <Icon className={styles.footerLogo} icon="footer-logo" />
           <div className={styles.footerInfo}>
-            <p className={styles.address}>
-              Urb. Las Mercedes, Caracas – Venezuela.
-            </p>
             <p className={styles.legalInfo}>{`
               2021 ®Kaizen Capital. ${language.rights}`}
               {' '}
