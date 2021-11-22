@@ -186,7 +186,7 @@ function Tools() {
       <div className={styles.swiperWrapper}>
         <Swiper
           {...swiperParams}
-          getSwiper={updateSwiper}
+          // getSwiper={updateSwiper}
           containerClass={styles.swiperContainer}
           rebuildOnUpdate={rerender}
         >

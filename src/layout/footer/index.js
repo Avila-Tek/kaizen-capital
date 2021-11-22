@@ -53,7 +53,7 @@ function KDABanner() {
         <div className={styles.upiconContainer}>
           <a className={styles.upicon} href={language.links[0].href}>
           <svg viewBox="0 0 446.62 272.85">
-          <g fill="white" id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,157.32,228.49,0l24.17,15.12L446.62,151V266.5L229.05,116.69,0,272.85Z"/></g></g>
+          <g fill="white" id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M0,157.32,228.49,0l24.17,15.12L446.62,151V266.5L229.05,116.69,0,272.85Z"/></g></g>
           </svg>
           </a>
         </div>
@@ -76,7 +76,7 @@ function KDABanner() {
       <div className={styles.upiconContainer}>
         <a className={styles.upicon} href={language.links[0].href}>
           <svg viewBox="0 0 446.62 272.85">
-          <g fill="white" id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,157.32,228.49,0l24.17,15.12L446.62,151V266.5L229.05,116.69,0,272.85Z"/></g></g>
+          <g fill="white" id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path className="cls-1" d="M0,157.32,228.49,0l24.17,15.12L446.62,151V266.5L229.05,116.69,0,272.85Z"/></g></g>
           </svg>
         </a>
       </div>

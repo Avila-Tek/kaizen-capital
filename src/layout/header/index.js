@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'gatsby';
 // import PropTypes from 'prop-types';
 import Icon from 'components/shared/icon';
-import { scss } from 'utils';
 import { WindowContext } from 'contexts/window-context';
 import { LanguageContext } from 'contexts/language-context';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -87,7 +86,7 @@ function Header() {
         {displaySize === 'DESKTOP' ? (
           <div className={styles.navWrapper}>
             {language.links.map(item => (
-              <NavItem {...item} key={item.name} />
+              <NavItem {...item} key={item.name} setActiveNav={setActiveNav} />
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <LanguageDropdown />
