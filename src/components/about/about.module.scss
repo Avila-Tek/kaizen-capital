@@ -8,7 +8,7 @@
 
 .bannerWrapper,
 .bannerWrapper::before {
-  color: white;
+  color: #fff;
   height: r(125);
   @include media(md) {
     height: r(170);

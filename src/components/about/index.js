@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-// import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
+import { StaticImage } from "gatsby-plugin-image";
 import { getImage } from 'gatsby-plugin-image';
-import { convertToBgImage } from 'gbimage-bridge';
+// import BackgroundImage from 'gatsby-background-image';
+// import { convertToBgImage } from 'gbimage-bridge';
 import { Waypoint } from 'react-waypoint';
 import Section from 'components/shared/section';
 import Title from 'components/shared/multi-title';
@@ -17,36 +17,48 @@ const defaultProps = {};
 
 function KDABanner() {
   const language = useContext(LanguageContext);
-  const placeholderImage = useStaticQuery(graphql`
-    {
-      banner: file(relativePath: { eq: "kc-banner.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(
-            quality: 100
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-            width: 1300
-            height: 445
-          )
-        }
-      }
-    }
-  `);
-  const image = getImage(placeholderImage.banner);
-  const bgImage = convertToBgImage(image);
+  // const placeholderImage = useStaticQuery(graphql`
+  //   {
+  //     banner: file(relativePath: { eq: "kc-banner.jpg" }) {
+  //       childImageSharp {
+  //         gatsbyImageData(
+  //           quality: 100
+  //           placeholder: BLURRED
+  //           formats: [AUTO, WEBP]
+  //           width: 1300
+  //           height: 445
+  //         )
+  //       }
+  //     }
+  //   }
+  // `);
+  // const image = getImage(placeholderImage.banner);
+  // const bgImage = convertToBgImage(image);
 
   return (
-    <BackgroundImage
-      Tag="section"
-      {...bgImage}
-      preserveStackingContext
+    <StaticImage
+      src="../../images/kc-banner.jpg"
+      style={{
+        width: '100%',
+        height: '445',
+      }}
       className={styles.bannerWrapper}
       alt={language.AboutBannerAlt}
     />
   );
+
+  // return (
+  //   <BackgroundImage
+  //     Tag="div"
+  //     {...bgImage}
+  //     preserveStackingContext
+  //     className={styles.bannerWrapper}
+  //     alt={language.AboutBannerAlt}
+  //   />
+  // );
 }
 
-function ContentItem({ icon, line1, line2, className }) {
+function ContentItem({ icon, line1='', line2='', className }) {
   return (
     <div className={scss(styles.cardWrapper, className)}>
       <div className={styles.iconWrapper}>
