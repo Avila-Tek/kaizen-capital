@@ -98,16 +98,19 @@ function Footer() {
         <Section className={styles.footerSection}>
           <Icon className={styles.footerLogo} icon="footer-logo" />
           <div className={styles.footerInfo}>
-            <p className={styles.legalInfo}>{`
-              2021 ®Kaizen Capital. ${language.rights}`}
-              {' '}
-              <a href="https://kd.agency/" target="__blank">
-                kd.agency
+            <p className={styles.legalInfo}>
+              {`
+              2021 ®Kaizen Capital. ${language.rights}`}{" "}
+              <a href="http://bamconsulting.net/" target="__blank">
+                BAM Consulting
               </a>
             </p>
           </div>
           <div className={styles.socialLinks}>
-            <a href="https://www.linkedin.com/company/kaizen-capital-venezuela/about/" target="_black">
+            <a
+              href="https://www.linkedin.com/company/kaizen-capital-venezuela/about/"
+              target="_black"
+            >
               <Icon icon="linkedin" />
             </a>
             <a href="https://www.instagram.com/kaizencapital_/" target="_black">
