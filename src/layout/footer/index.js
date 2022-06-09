@@ -58,11 +58,11 @@ function KDABanner() {
           </a>
         </div>
         <div className={styles.content}>
-          <Icon icon="brand-kaizen-holdings" />
+          {/* <Icon icon="brand-kaizen-holdings" />
           <Icon icon="brand-kaizen-capital" />
           <Icon icon="brand-kaizen-digital-agency" />
           <Icon icon="brand-iselitas" />
-          <Icon icon="brand-socado" />
+          <Icon icon="brand-socado" /> */}
         </div>
       </div>
     </BackgroundImage>
@@ -83,7 +83,7 @@ function KDABanner() {
       <h3 className={styles.titleSmall}>
         {language.group}
       </h3>
-      <GroupCarousel />
+      {/* <GroupCarousel /> */}
     </BackgroundImage>
   );
 }
@@ -93,7 +93,7 @@ function Footer() {
 
   return (
     <>
-      <KDABanner />
+      {/* <KDABanner />n */}
       <footer className={styles.footer}>
         <Section className={styles.footerSection}>
           <Icon className={styles.footerLogo} icon="footer-logo" />
